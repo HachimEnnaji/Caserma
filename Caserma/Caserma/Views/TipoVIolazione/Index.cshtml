@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Caserma.Models.TipoViolazione>
+
+@{
+    ViewBag.Title = "Contravvenzioni";
+}
+
+<h2 class="display-3 text-capitalize text-center">Lista Contravvenzioni</h2>
+
+
+<table class="table table-primary table-striped" >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Violazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Violazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descrizione)
+        </td>
+       
+    </tr>
+}
+
+</table>

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Caserma.Models.Anagrafica>
+
+@{
+    ViewBag.Title = "Anagrafica trasgressori";
+}
+
+<h2 class="display-3 text-capitalize text-center">Anagrafica trasgressori</h2>
+
+    <button class="btn btn-outline-success mb-2" onclick="location.href='@Url.Action("Create")'"><i class="fa-solid fa-plus"></i></button> 
+
+<table class="table table-striped-columns text-center">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cognome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Indirizzo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Citta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CAP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodiceFiscale)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cognome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Indirizzo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Citta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CAP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodiceFiscale)
+        </td>
+            <td>
+                <button class="btn btn-outline-secondary px-3" onclick="location.href='@Url.Action("Edit", new { id = item.ID_Anagrafica })'"><i class="fa-regular fa-pen-to-square"></i></button> 
+            </td>
+    </tr>
+}
+
+</table>
